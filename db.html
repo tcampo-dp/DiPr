@@ -1,0 +1,188 @@
+<div class="header-title">
+    <h3 style="color: #f6f6f6">Data Bases</h3>
+</div>
+<div class="bc-yellow-black" style="border-top:#594300; margin-bottom: 10px"></div>
+<button id="btnDb" class="btn btn-plugdo-yellow font-weight-700" data-toggle="modal" data-target="#ModalDb">Create DB</button>
+<br>
+<br>
+<div class="row" id="Db">
+    <div class="col-5">
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text input-search"><span class="fa fa-search"></span></div>
+        </div>
+            <input type="text" class="form-control bg-black-granite bc-black tc-white font-weight-700" 
+            placeholder="Filter by tags and attributes or search by keyword" style="border-left: 0">
+      </div>
+    </div>
+    <div class="col-1">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary"><span class="fa fa-angle-double-left font-weight-700"></span></button>
+            <button type="button" class="btn btn-secondary"><span class="fa fa-angle-left font-weight-700"></button>
+            <button disabled type="button" class="btn btn-secondary">1 to 1 of 1</button>
+            <button type="button" class="btn btn-secondary"><span class="fa fa-angle-right font-weight-700"></span></button>
+            <button type="button" class="btn btn-secondary"><span class="fa fa-angle-double-right font-weight-700"></span></button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-12">
+        <table id="tabDb" class="table table-bordered" style="background: white">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Servers</th>
+                    <th>Workspaces</th>
+                    <th>DB</th>
+                    <th>Created Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="fa fa-desktop"></span></td>
+                    <td>Windows Server</td>
+                    <td>i-0325232a32363e73</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>00/00/0000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--  -->
+<div id="descDb" >
+      <ul class="nav nav-tabs " style="border-bottom: 1px solid #212529 !important" role="tablist">
+        <li class="nav-item ">
+          <a class="nav-link" href="#description" role="tab" data-toggle="tab">Description</a>
+        </li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content" 
+           style="border: 1px solid #212529; border-top: 0px; border-radius: 0px 0px 0px 0px !important; background: #212529">
+        <div role="tabpanel" class="tab-pane fade show active" style="padding: 10px" id="description">
+            <div class="row">
+                <div class="col-5">
+                    <table class="table table-dark">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="width: 150px;">Instanse ID:</td>
+                            <td>i-0325232a32363e73</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Instanse state:</td>
+                            <td>running</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Instanse type:</td>
+                            <td>t2.medium</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Elastic IPs:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Availability zone:</td>
+                            <td>us-west-2a</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Secureity groups:</td>
+                            <td>default view inbound rules</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Scheduled events:</td>
+                            <td>no scheduled events</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-5">
+                    <table class="table table-dark">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="width: 150px;">Instanse ID:</td>
+                            <td>i-0325232a32363e73</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Instanse state:</td>
+                            <td>running</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Instanse type:</td>
+                            <td>t2.medium</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Elastic IPs:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Availability zone:</td>
+                            <td>us-west-2a</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Secureity groups:</td>
+                            <td>default view inbound rules</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Scheduled events:</td>
+                            <td>no scheduled events</td>
+                        </tr>
+                    </table>                   
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="ModalDb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="border:1px solid #212529; border-radius: 0;">
+        <div class="modal-body" style="background: #212529">
+                <div class="form-group text-center mt-2">
+                    <label class="text-left float-left" style="color: #f6f6f6">Name</label>
+                    <input id="txtName" type="text" class="form-control bg-black-granite bc-black tc-white font-weight-700 bc-yellow-black" >
+                </div>
+                <div class="form-group text-center mt-2">
+                    <label class="text-left float-left" style="color: #f6f6f6">Description</label>
+                    <input id="txtDescription" type="text" class="form-control bg-black-granite bc-black tc-white font-weight-700 bc-yellow-black" >
+                </div>
+        </div>
+        <div class="modal-footer" style="background: #212529; border-top: 1px solid #212529">
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="btnAddDb" type="button" class="btn btn-plugdo-yellow font-weight-700">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+    

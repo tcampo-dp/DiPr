@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlugdoSignup</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body class="font-advent-pro">
+  <aside class="main-sidebar">
+      <section class="sidebar" style="height: auto;">
+          <ul class="sidebar-menu">
+             <li><a onclick="cargarStack()" style="cursor: pointer;" class="text-white">Stack</a></li>
+             <li><a onclick="cargarServer()" style="cursor: pointer;" class="text-white">Server</a></li>
+             <li><a onclick="cargarWorkSpace()" style="cursor: pointer;" class="text-white">Workspaces</a></li>
+             <li><a onclick="cargarDb()" style="cursor: pointer;" class="text-white">Db</a></li>
+          </ul>
+      </section>
+  </aside>
+  <section class="content-dash">
+      <div id="app"></div>
+  </section>
+ 
+  <script src="assets/js/app.js" type="text/javascript"></script>
+  <script src="assets/js/cargarDb.js" type="text/javascript"></script>
+  <script src="assets/js/cargarServer.js" type="text/javascript"></script>
+  <script src="assets/js/cargarStack.js" type="text/javascript"></script>
+  <script src="assets/js/cargarWorkSpace.js" type="text/javascript"></script>
+</body>
+</html>
