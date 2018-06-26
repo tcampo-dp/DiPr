@@ -11,13 +11,13 @@ $(document).ready(function () {
 
   if (texTemp === localStorage.getItem("textemp")) {
     $('#descDb').toggle('fast');
-    var InstanseID = $(valores[2]).html();
-    $("#InstanseID").text(InstanseID);
-    console.log($("#InstanseID").text(InstanseID));
+    var InstanceID = $(valores[2]).html();
+    $("#InstanceID").text(InstanceID);
+    console.log($("#InstanceID").text(InstanceID));
   }else {
     $('#descDb').show('fast');
-    var InstanseID = $(valores[2]).html();
-    $("#InstanseID").text(InstanseID);
+    var InstanceID = $(valores[2]).html();
+    $("#InstanceID").text(InstanceID);
   }
   
   localStorage.setItem("textemp", texTemp);
