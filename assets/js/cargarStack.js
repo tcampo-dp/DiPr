@@ -11,11 +11,15 @@ $(document).ready(function () {
 
   if (texTemp === localStorage.getItem("textemp")) {
     $('#descStack').toggle('fast');
+    $('#text-desc').toggle();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
     console.log($("#InstanceID").text(InstanceID));
   }else {
     $('#descStack').show('fast');
+    $('#text-desc').hide();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
   }
@@ -48,9 +52,9 @@ function cargarStack() {
     data: {},
     success: function (datos) {
       $('#app').html(datos);
-      $('#tabStack').hide();
-      $('#Stack').hide();
+
       $('#descStack').hide();
+
       $('#btnAddStack').click(function () {
         $('#Stack').show('fast');
         $('#tabStack').show();
@@ -64,5 +68,6 @@ function cargarStack() {
     }
   });
 }
+
 
 
