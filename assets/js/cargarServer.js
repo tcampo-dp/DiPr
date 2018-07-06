@@ -11,11 +11,15 @@ $(document).ready(function () {
 
   if (texTemp === localStorage.getItem("textemp")) {
     $('#descServer').toggle('fast');
+    $('#text-desc').toggle();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
     console.log($("#InstanceID").text(InstanceID));
   }else {
     $('#descServer').show('fast');
+    $('#text-desc').hide();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
   }
@@ -48,9 +52,9 @@ function cargarServer() {
     data: {},
     success: function (datos) {
       $('#app').html(datos);
-      $('#tabServer').hide();
-      $('#Server').hide();
+
       $('#descServer').hide();
+
       $('#btnAddServer').click(function () {
         $('#Server').show('fast');
         $('#tabServer').show();
@@ -64,5 +68,6 @@ function cargarServer() {
     }
   });
 }
+
 
 

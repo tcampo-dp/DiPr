@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
    
 }).on("click", "#tabWorkSpaces tr", function(e) {
@@ -13,11 +11,15 @@ $(document).ready(function () {
 
   if (texTemp === localStorage.getItem("textemp")) {
     $('#descWorkSpaces').toggle('fast');
+    $('#text-desc').toggle();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
     console.log($("#InstanceID").text(InstanceID));
   }else {
     $('#descWorkSpaces').show('fast');
+    $('#text-desc').hide();
+
     var InstanceID = $(valores[2]).html();
     $("#InstanceID").text(InstanceID);
   }
@@ -31,7 +33,7 @@ function addWorkSpaces(Name, Desc) {
   var row = 
     ' <tr>' +
       '<td class="text-center" style="width: 50px;"><span class="fa fa-desktop text-info"></span></td>' +
-      '<td class="NameServer">'+ Name +'</td>' +
+      '<td class="NameWorkSpaces">'+ Name +'</td>' +
       '<td>'+ Desc +'</td>' +
       '<td>0</td>' +
       '<td>0</td>' +
@@ -50,9 +52,9 @@ function cargarWorkSpaces() {
     data: {},
     success: function (datos) {
       $('#app').html(datos);
-      $('#tabWorkSpaces').hide();
-      $('#WorkSpaces').hide();
+
       $('#descWorkSpaces').hide();
+
       $('#btnAddWorkSpaces').click(function () {
         $('#WorkSpaces').show('fast');
         $('#tabWorkSpaces').show();
@@ -66,5 +68,6 @@ function cargarWorkSpaces() {
     }
   });
 }
+
 
 
