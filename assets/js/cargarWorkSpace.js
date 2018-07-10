@@ -28,6 +28,9 @@ $(document).ready(function () {
 
 });
 
+var jsonData = {};
+
+
 function addWorkSpaces(Name, Desc) {
   var date = moment().format('L');
   var row = 
@@ -41,9 +44,25 @@ function addWorkSpaces(Name, Desc) {
       '<td>'+ date +'</td>' +
     '</tr>';
 
+    var data = [];
+
+    if (localStorage.getItem("WorkSpacesJ") === null) {
+      data.push({'NameWorkSpaces' : Name, 'DescWorkSpaces' : Desc, 'Date': date});
+    }else{
+      var _jsonData ={ _WorkSpaces:[]};
+      _jsonData._WorkSpaces  = JSON.parse(localStorage.getItem('WorkSpacesJ'));
+      $.each(_jsonData._WorkSpaces, function (index, item) { 
+         data.push(item);
+      });
+      data.push({'NameWorkSpaces' : Name, 'DescWorkSpaces' : Desc, 'Date': date});
+    }
+
+    localStorage.setItem("WorkSpacesJ", JSON.stringify(data));
+
   $('#tabWorkSpaces').append(row);
 
 }
+
 
 function cargarWorkSpaces() {
   $.ajax({
@@ -55,12 +74,52 @@ function cargarWorkSpaces() {
 
       $('#descWorkSpaces').hide();
 
+      if (localStorage.getItem("WorkSpacesJ") !== null) {
+        var _WorkSpacesJ = $.parseJSON(localStorage.getItem("WorkSpacesJ"));
+         $.each(_WorkSpacesJ, function (i, item) { 
+            var tr =  
+           ' <tr>' +
+               '<td class="text-center" style="width: 50px;"><span class="fa fa-desktop text-info"></span></td>' +
+               '<td class="NameServer">'+ item.NameWorkSpaces +'</td>' +
+               '<td>'+ item.DescWorkSpaces +'</td>' +
+               '<td>0</td>' +
+               '<td>0</td>' +
+               '<td>0</td>' +
+               '<td>'+ item.Date +'</td>' +
+           '</tr>';
+           $('#tabWorkSpaces').append(tr);
+         });
+       } else {
+         console.log("Vacio WorkSpaces")
+       }
+
+       if (localStorage.getItem("StackJ") !== null) {
+         var responseStack = $.parseJSON(localStorage.getItem("StackJ"));
+         console.log(responseStack);
+         $.each(responseStack, function (i, item) { 
+           $("#selectStack").append('<option value="'+ item.NameStack +'">'+ item.NameStack +'</option>');
+         });
+       }
+
+       if (localStorage.getItem("ServerJ") !== null) {
+         var responseServer = $.parseJSON(localStorage.getItem("ServerJ"));
+         console.log(responseServer);
+         $.each(responseServer, function (i, item) { 
+           $("#selectServer").append('<option value="'+ item.NameServer +'">'+ item.NameServer +'</option>');
+         });
+       }
+
+
       $('#btnAddWorkSpaces').click(function () {
         $('#WorkSpaces').show('fast');
         $('#tabWorkSpaces').show();
         $('#ModalWorkSpaces').modal('toggle');
         var Name = $('#txtNameWorkSpaces').val();
         var Desc = $('#txtDescWorkSpaces').val();
+
+        
+       
+
         addWorkSpaces(Name, Desc);
         $('#txtNameWorkSpaces').val('');
         $('#txtDescWorkSpaces').val('');
