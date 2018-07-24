@@ -42,6 +42,8 @@ function addStack(Name, Desc) {
     '</tr>';
 
 
+
+
     var data = [];
 
     if (localStorage.getItem("StackJ") === null) {
