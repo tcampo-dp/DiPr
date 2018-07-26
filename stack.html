@@ -1,10 +1,18 @@
 <div class="header-title">
-    <h3 style="color: #f6f6f6">Stack</h3>
+    <div class="title-header">
+        <h3 style="color: #f6f6f6">Stack</h3>
+       
+    </div>
 </div>
 <div class="bc-yellow-black" style="border-top:#594300; margin-bottom: 10px"></div>
-<button id="btnStack" class="btn btn-plugdo-yellow font-weight-700" data-toggle="modal" data-target="#ModalStack">Create Stack</button>
-<br>
-<br>
+<div class="btncontent">
+    <button id="btnStack" class="btn btn-plugdo-yellow font-weight-700" style="margin: 5px" data-toggle="modal" data-target="#ModalStack">Create Stack</button>
+    <button id="btnActionStack" class="btn btn-plugdo-yellow font-weight-700" style="margin: 0px 5px 0px 0px">Actions</button>
+    <div id="divActionStack">
+        <input name="" id="btnUpdateStack" class="btn btn-warning btn-sm" type="button" value="Update" data-toggle="modal" data-target="#ModalStack">
+        <input name="" id="btnDeleteStack" class="btn btn-warning btn-sm" type="button" value="Delete">
+    </div>
+</div>
 <div class="row" id="Stack">
     <div class="col-5">
         <input type="text" class="form-control bg-black-granite bc-black tc-white font-weight-700" 
@@ -29,13 +37,14 @@
                     <table id="tabStack" class="table table-bordered" style="background: white">
                         <thead>
                             <tr>
-                                <th></th>
+                                <th colspan="2"></th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Servers</th>
                                 <th>Workspaces</th>
                                 <th>DB</th>
                                 <th>Created Date</th>
+                                <th style="display: none;"></th>
                             </tr>
                         </thead>
                     </table>
@@ -177,7 +186,7 @@
                 </div>
         </div>
         <div class="modal-footer" style="background: #212529; border-top: 1px solid #212529">
-          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="btnCloseModalStack" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button id="btnAddStack" type="button" class="btn btn-plugdo-yellow font-weight-700">Save changes</button>
         </div>
       </div>

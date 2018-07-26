@@ -305,6 +305,16 @@ body {
   float: left;
 }
 
+.title-header{
+  display: flex;
+}
+
+.btncontent{
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
 
 
 
