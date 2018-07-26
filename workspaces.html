@@ -2,9 +2,14 @@
         <h3 style="color: #f6f6f6">WorkSpaces</h3>
     </div>
     <div class="bc-yellow-black" style="border-top:#594300; margin-bottom: 10px"></div>
-    <button id="btnWorkSpaces" class="btn btn-plugdo-yellow font-weight-700" data-toggle="modal" data-target="#ModalWorkSpaces">Create WorkSpaces</button>
-    <br>
-    <br>
+    <div class="btncontent">
+        <button id="btnWorkSpaces" class="btn btn-plugdo-yellow font-weight-700" style="margin: 5px" data-toggle="modal" data-target="#ModalWorkSpaces">Create WorkSpaces</button>
+        <button id="btnActionWorkSpaces" class="btn btn-plugdo-yellow font-weight-700" style="margin: 0px 5px 0px 0px">Actions</button>
+        <div id="divActionWorkSpaces">
+            <input name="" id="btnUpdateWorkSpaces" class="btn btn-warning btn-sm" type="button" value="Update" data-toggle="modal" data-target="#ModalWorkSpaces">
+            <input name="" id="btnDeleteWorkSpaces" class="btn btn-warning btn-sm" type="button" value="Delete">
+        </div>
+    </div>
     <div class="row" id="WorkSpaces">
         <div class="col-5">
             <input type="text" class="form-control bg-black-granite bc-black tc-white font-weight-700" 
