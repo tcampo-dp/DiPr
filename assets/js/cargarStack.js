@@ -28,22 +28,25 @@ $(document).ready(function () {
   localStorage.setItem("textemp", texTemp);
 
 }).on("click", "#btnActionStack", function () {
-  $('#divActionStac').toggle();
+  $('#divActionStack').toggle();
 }).on("click", "#btnUpdateStack", function () {
    IdJson = $('table input:checked').map(function(){
    return $(this).closest('tr').find('td:eq(8)').text();
    }).get();
 
    jsonValue = JSON.parse(localStorage.getItem('StackJ'));
+   if (IdJson.length <= 1) {
+     for (let i = 0; i < jsonValue.length ; i++) {
+       if (jsonValue[i].id == IdJson) {
+         InfoStack = jsonValue[i];
+       }
+     }
+     $('#txtNameStack').val(InfoStack.NameStack);
+     $('#txtDescStack').val(InfoStack.DescStack);
+   }
+   
+  
 
-
-  for (let i = 0; i < jsonValue.length ; i++) {
-    if (jsonValue[i].id == IdJson) {
-      InfoStack = jsonValue[i];
-    }
-  }
-  $('#txtNameStack').val(InfoStack.NameStack);
-  $('#txtDescStack').val(InfoStack.DescStack);
     
 }).on("click", "#btnDeleteStack", function () {
   IdJson = $('table input:checked').map(function(){
@@ -56,13 +59,11 @@ $(document).ready(function () {
    for (let i = 0; i < jsonValue.length ; i++) {
      if (jsonValue[i].id == IdJson) {
        InfoStack = jsonValue[i];
-        console.log(i);
         jsonValue.splice(i, 1);
 
      }
    }
 
-   console.log(InfoStack)
     
     localStorage.setItem("StackJ", JSON.stringify(jsonValue));
     
@@ -87,7 +88,6 @@ function addStack(Name, Desc) {
   }else{
     var _jsonData ={ _Stack:[]};
     _jsonData._Stack  = JSON.parse(localStorage.getItem('StackJ'));
-    console.log('Json Data '+_jsonData._Stack.length);
     if (_jsonData._Stack.length === 0) {
       id = 1;
       
@@ -128,7 +128,7 @@ function cargarStack() {
       $('#app').html(datos);
 
       $('#descStack').hide();
-      $('#divActionStac').hide();
+      $('#divActionStack').hide();
 
       if (localStorage.getItem("StackJ") !== null) {
         response = $.parseJSON(localStorage.getItem("StackJ"));
@@ -147,8 +147,6 @@ function cargarStack() {
           '</tr>';
           $('#tabStack').append(tr);
         });
-      } else {
-        console.log("Vacio")
       }
 
       $('#btnAddStack').click(function () {
