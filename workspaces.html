@@ -4,10 +4,14 @@
     <div class="bc-yellow-black" style="border-top:#594300; margin-bottom: 10px"></div>
     <div class="btncontent">
         <button id="btnWorkSpaces" class="btn btn-plugdo-yellow font-weight-700" style="margin: 5px" data-toggle="modal" data-target="#ModalWorkSpaces">Create WorkSpaces</button>
-        <button id="btnActionWorkSpaces" class="btn btn-plugdo-yellow font-weight-700" style="margin: 0px 5px 0px 0px">Actions</button>
-        <div id="divActionWorkSpaces">
-            <input name="" id="btnUpdateWorkSpaces" class="btn btn-warning btn-sm" type="button" value="Update" data-toggle="modal" data-target="#ModalWorkSpaces">
-            <input name="" id="btnDeleteWorkSpaces" class="btn btn-warning btn-sm" type="button" value="Delete">
+        <div class="dropdown">
+            <button class="btn btn-plugdo-yellow font-weight-700 dropdown-toggle" type="button" data-toggle="dropdown">Actions
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" style="padding: 10px; background: #eab413;">
+              <li><a id="btnUpdateWorkSpaces" class="font-weight-700" style="color: black; text-decoration: none"  data-toggle="modal" data-target="#ModalWorkSpaces" href="#">UpDate</a></li>
+              <li class="divider"></li>
+              <li><a id="btnDeleteWorkSpaces" class="font-weight-700" style="color: black; text-decoration: none"  href="#">Delete</a></li>
+            </ul>
         </div>
     </div>
     <div class="row" id="WorkSpaces">
@@ -30,21 +34,7 @@
     </div>
             <div class="example-4">
                 <div id="eight" class="split split-vertical">
-                    <div class="">
-                        <table id="tabWorkSpaces" class="table table-bordered" style="background: white">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>WorkSpacess</th>
-                                    <th>Workspaces</th>
-                                    <th>DB</th>
-                                    <th>Created Date</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+                    <div id="tabla"></div>
                 </div>
                 <div id="nine" class="split split-vertical">
                     <label id="text-desc" style="color: #f6f6f6; font-size:20px; margin-top: 10px">Select an WorkSpaces above</label>
@@ -160,11 +150,6 @@
         
                 </div>
             </div>
-            <script>
-                Split(['#eight', '#nine'], {
-                  direction: 'vertical'
-                });
-            </script>
     <!--  -->
     
          <!-- Modal -->
@@ -194,7 +179,7 @@
             </div>
         </div>
         <div class="modal-footer" style="background: #212529; border-top: 1px solid #212529">
-            <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button  id="btnCloseModalWorkSpaces" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button id="btnAddWorkSpaces" type="button" class="btn btn-plugdo-yellow font-weight-700">Save changes</button>
         </div>
         </div>
